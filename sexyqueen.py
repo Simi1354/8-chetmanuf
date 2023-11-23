@@ -36,18 +36,18 @@ def possible(board,n):
 def rec(board,n,res,sq):
    # print(board,n,res,sq)
     if n==8:
-        return 1
+        return res+1
     if sq==64:
-        return 0
+        return res
     for i in range(sq, 64):
         if n==1:
             print(i)
         if possible(board,i):
             board[i]=1
-            res+=rec(board,n+1,res,i+1)
+            res=rec(board,n+1,res,i+1)
             board[i]=0
     
     return res
     
 board = [0]*64
-print(math.log2(rec(board,0,0,0)))
+print(rec(board,0,0,0))
