@@ -9,16 +9,29 @@ def possible(board,n):
     for i in range(0,8):
         if k!=n and board[k] == 1:
             return False
+ #przekatna 1
     k=n
     while k>=0:
         if k!=n and board[k] == 1:
             return False
         k-=9
+
     k=n
     while k<64:
         if k!=n and board[k] == 1:
             return False
         k+=9
+       k=n
+#przekatns 2
+    while k>=0:
+        if k!=n and board[k] == 1:
+            return False
+        k-=7
+    k=n
+    while k<64:
+        if k!=n and board[k] == 1:
+            return False
+        k+=7
     return True
 def rec(board,n,res,sq):
    # print(board,n,res,sq)
